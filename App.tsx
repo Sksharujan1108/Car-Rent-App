@@ -1,21 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import Routes from '@/navigation/routes';
 
 const App = () => {
   return (
-    <View style = {styles.container}>
-      <Text>App</Text>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Routes />
+    </GestureHandlerRootView>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
