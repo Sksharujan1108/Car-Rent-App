@@ -173,7 +173,7 @@ const SignUpScreen = ({navigation}: AuthStackScreenProps<'SignUpScreen'>) => {
               <PrimaryButton
                 containerStyle={styles.payButton}
                 textStyle={styles.signUpText}
-                child={<MaterialIcons name="apple" size={2} color="#000" />}
+                child={<MaterialIcons name="apple" size={24} color="#000" />}
                 label="Apple Pay"
                 onPress={() => {
                   console.log('Login button pressed');
