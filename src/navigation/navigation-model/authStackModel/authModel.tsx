@@ -5,6 +5,7 @@ export type AuthStackParamList = {
   OnBoardingTwoScreen: undefined;
   LoginScreen: undefined;
   SignUpScreen: undefined;
+  ResetScreen: undefined;
 };
 
 export type AuthStackScreenProps<Screen extends keyof AuthStackParamList> = StackScreenProps<

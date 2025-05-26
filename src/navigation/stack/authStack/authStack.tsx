@@ -5,6 +5,7 @@ import OnBoardingScreen from '@/screen/auth/onboardingScreen';
 import OnBoardingTwoScreen from '@/screen/auth/onBoardingTwoScreen';
 import LoginScreen from '@/screen/auth/loginScreen';
 import SignUpScreen from '@/screen/auth/signUpScreen';
+import ResetScreen from '@/screen/auth/resetScreen';
 
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
@@ -19,6 +20,7 @@ const AuthStack = () => {
       <Stack.Screen name="OnBoardingTwoScreen" component={OnBoardingTwoScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+      <Stack.Screen name="ResetScreen" component={ResetScreen} />
     </Stack.Navigator>
   );
 };

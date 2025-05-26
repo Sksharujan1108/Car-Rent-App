@@ -16,4 +16,18 @@ export const colors = {
   placeholderText: '#7F7F7F',
   checkBoxBg: '#454545',
   outlineButtonBg: '#EDEDED',
+  divider: '#D9D9D9',
+  btnBorder: '#D7D7D7',
+  gray: '#767676',
+  star: '#FF8F3A',
+  unFilledStar: '#C5C8D2',
+  bgTab: '#21292B',
+  carBg: '#f0f0f0',
+  crossBg: '#141B34',
+  visaCard: {
+    primary: '#000000',
+    secondary: '#1c1c1c',
+    gray: '#2e2e2e',
+    gray2: '#3a3a3a',
+  },
 };

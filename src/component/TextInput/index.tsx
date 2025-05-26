@@ -1,4 +1,4 @@
-import {Image, TextInput, View} from 'react-native';
+import {Image, TextInput, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {styles} from './styles';
 import {colors} from '@/theme/colors';
@@ -6,7 +6,7 @@ import assets from '@/assets';
 import {IInputProps} from './props';
 
 const TextInputComponent = (props: IInputProps) => {
-  const {value, onChangeText, placeholder, secureTextEntry} = props;
+  const {value, onChangeText, placeholder, secureTextEntry, isSecure, onSecurePress, keyboardType} = props;
   return (
     <View style={styles.container}>
       <TextInput
@@ -16,13 +16,16 @@ const TextInputComponent = (props: IInputProps) => {
         secureTextEntry={secureTextEntry}
         value={value}
         onChangeText={onChangeText}
+        keyboardType={keyboardType}
       />
-      {secureTextEntry && (
-        <Image
+      {isSecure && (
+        <TouchableOpacity onPress={onSecurePress} activeOpacity={0.6}>
+          <Image
           source={assets?.eye}
           style={styles.eyeStyle}
           resizeMode="contain"
         />
+        </TouchableOpacity>
       )}
     </View>
   );

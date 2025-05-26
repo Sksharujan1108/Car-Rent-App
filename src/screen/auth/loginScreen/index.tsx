@@ -7,6 +7,7 @@ import {
   Pressable,
   SafeAreaView,
   ScrollView,
+  StatusBar,
   Text,
   TouchableOpacity,
   View,
@@ -20,11 +21,13 @@ import PrimaryButton from '@/component/primaryButton';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import { AuthStackScreenProps } from '@/navigation/navigation-model/authStackModel/authModel';
+import {AuthStackScreenProps} from '@/navigation/navigation-model/authStackModel/authModel';
+import { useSignin } from './login.hook';
 
 const LoginScreen = ({navigation}: AuthStackScreenProps<'LoginScreen'>) => {
   const insets = useSafeAreaInsets();
   const [keyboardVisible, setKeyboardVisible] = useState(false);
+  const {isSecure, setIsSecure} = useSignin();
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -70,8 +73,14 @@ const LoginScreen = ({navigation}: AuthStackScreenProps<'LoginScreen'>) => {
         style={[styles.root]}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         keyboardVerticalOffset={keyboardVisible ? 0 : -insets.top}>
+        {/*  */}
+        <StatusBar
+          barStyle="dark-content"
+          hidden={false}
+        />
+        {/*  */}
         <ScrollView
-          contentContainerStyle={{flexGrow: 1}}
+          contentContainerStyle={{flexGrow: 1, paddingBottom: 10}}
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled">
           <View style={styles.mainWrapper}>
@@ -101,10 +110,14 @@ const LoginScreen = ({navigation}: AuthStackScreenProps<'LoginScreen'>) => {
               <TextInputComponent
                 placeholder="Password"
                 value={formData?.user?.password}
-                secureTextEntry
+                isSecure
+                secureTextEntry={!isSecure}
                 onChangeText={text => {
                   console.log('password', text);
                   onChangeTextField('password', text);
+                }}
+                onSecurePress={() => {
+                  setIsSecure(!isSecure);
                 }}
               />
             </View>
@@ -119,7 +132,11 @@ const LoginScreen = ({navigation}: AuthStackScreenProps<'LoginScreen'>) => {
                 />
                 <Text style={styles.rememberMeText}>Remember Me</Text>
               </View>
-              <Pressable>
+              <Pressable
+                onPress={() => {
+                  navigation.navigate('ResetScreen');
+                }}
+              >
                 <Text style={styles.rememberMeText}>Forgot Password?</Text>
               </Pressable>
             </View>
@@ -174,15 +191,16 @@ const LoginScreen = ({navigation}: AuthStackScreenProps<'LoginScreen'>) => {
           </View>
           {/*  */}
           <View style={styles.footerWrapper}>
-            <Text style={styles.dontHaveText}>Don't have an account ? {''}</Text>
-              <TouchableOpacity
-                activeOpacity={0.6}
-                onPress={() => {
-                  navigation.navigate('SignUpScreen');
-                }}
-              >
-                <Text style={styles.signUp}>Sign Up</Text>
-              </TouchableOpacity>
+            <Text style={styles.dontHaveText}>
+              Don't have an account ? {''}
+            </Text>
+            <TouchableOpacity
+              activeOpacity={0.6}
+              onPress={() => {
+                navigation.navigate('SignUpScreen');
+              }}>
+              <Text style={styles.signUp}>Sign Up</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
