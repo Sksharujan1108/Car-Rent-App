@@ -1,7 +1,7 @@
 import { colors } from '@/theme/colors';
 import { FontSize } from '@/theme/font-size';
 import { scale } from '@/theme/scale';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container: {
@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
     },
     mainWrapper: {
         // flex: 1,
-        padding: scale(18),
+        marginTop: Platform.OS === 'android' ? scale(40) :  scale(10),
+        paddingHorizontal: scale(18),
     },
     headerRowContainer: {
         flexDirection: 'row',
@@ -104,7 +105,7 @@ export const styles = StyleSheet.create({
     footerWrapper: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: scale(5),
+        marginTop: scale(10),
         alignItems: 'center',
     },
     dontHaveText: {
