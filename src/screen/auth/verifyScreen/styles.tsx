@@ -62,12 +62,4 @@ export const styles = StyleSheet.create({
       fontFamily: typography.bold,
       fontSize: FontSize.FONT_18Px,
     },
-    dontHaveText: {
-      color: colors.placeholderText,
-      fontFamily: typography.regular,
-    },
-
-    footerContainer: {
-      paddingBottom: Platform.OS === 'android' ? scale(30) : scale(0),
-    },
   });

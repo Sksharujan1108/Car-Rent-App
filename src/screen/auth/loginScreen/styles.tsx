@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     },
     mainWrapper: {
         // flex: 1,
-                marginTop: Platform.OS === 'android' ? scale(30) :  scale(5),
+        marginTop: Platform.OS === 'android' ? scale(40) :  scale(10),
         paddingHorizontal: scale(18),
     },
     headerRowContainer: {
