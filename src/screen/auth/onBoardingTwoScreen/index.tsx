@@ -3,8 +3,9 @@ import React from 'react';
 import assets from '@/assets';
 import {styles} from './styles';
 import PrimaryButton from '@/component/primaryButton';
+import { AuthStackScreenProps } from '@/navigation/navigation-model/authStackModel/authModel';
 
-const OnBoardingTwoScreen = () => {
+const OnBoardingTwoScreen = ({navigation}: AuthStackScreenProps<'OnBoardingTwoScreen'>) => {
     // const navigation = useNavigation();
   return (
     <ImageBackground
@@ -41,7 +42,9 @@ const OnBoardingTwoScreen = () => {
         <PrimaryButton
           containerStyle={styles.buttonStyle}
           label="Get Started"
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate('LoginScreen');
+          }}
         />
       </ImageBackground>
     </ImageBackground>

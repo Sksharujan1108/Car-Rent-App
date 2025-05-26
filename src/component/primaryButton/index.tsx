@@ -1,23 +1,19 @@
-import { Pressable, Text, TextStyle, ViewStyle } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { styles } from './styles';
+import { IPrimaryButtonProps } from './props';
 
-interface PrimaryButtonProps {
-    containerStyle?: ViewStyle,
-    textStyle?: TextStyle,
-    label: string;
-    onPress: (e: any) => void;
-}
-
-const PrimaryButton = (props: PrimaryButtonProps) => {
-    const { containerStyle, textStyle, label, onPress } = props;
+const PrimaryButton = (props: IPrimaryButtonProps) => {
+    const { containerStyle, textStyle, child, label, onPress } = props;
   return (
-    <Pressable
+    <TouchableOpacity
       style={[styles.container, containerStyle]}
       onPress={onPress}
+      activeOpacity={0.6}
     >
+      {child && child}
       <Text style={[styles.label, textStyle]}>{label}</Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

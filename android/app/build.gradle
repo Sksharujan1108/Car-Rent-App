@@ -117,3 +117,5 @@ dependencies {
         implementation jscFlavor
     }
 }
+// Add the Victor Icon
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
