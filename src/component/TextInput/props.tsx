@@ -1,7 +1,8 @@
 import { JSX } from 'react';
-import { KeyboardTypeOptions } from 'react-native';
+import { KeyboardTypeOptions, ViewStyle } from 'react-native';
 
 export interface IInputProps {
+    containerStyle?: ViewStyle;
     value: string;
     onChangeText: (value: string) => void;
     placeholder?: string;

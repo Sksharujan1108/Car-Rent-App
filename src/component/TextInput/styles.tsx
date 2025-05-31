@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
         fontSize: FontSize?.FONT_14Px,
         fontWeight: '400',
         color: colors?.black,
-        // backgroundColor: 'red',
     },
     eyeStyle: {
         width: scale(22),

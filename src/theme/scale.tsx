@@ -27,6 +27,7 @@ const moderateScale = (sizeValue: number, factor = 0.5) =>
   Math.ceil(sizeValue + (scale(sizeValue) - sizeValue) * factor);
 const moderateVerticalScale = (sizeValue: number, factor = 0.5) =>
   Math.ceil(sizeValue + (verticalScale(sizeValue) - sizeValue) * factor);
+
 const isIpad = () => width >= 768;
 
 export {isIpad, moderateScale, moderateVerticalScale, scale, verticalScale};

@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     text: {
         flex: 1,
         paddingVertical: scale(12),
-        fontSize: FontSize?.FONT_14Px,
+        fontSize: FontSize?.FONT_16Px,
         fontWeight: '400',
         color: colors?.black,
         fontFamily: typography?.regular,

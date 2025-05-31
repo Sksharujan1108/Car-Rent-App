@@ -7,6 +7,7 @@ import LoginScreen from '@/screen/auth/loginScreen';
 import SignUpScreen from '@/screen/auth/signUpScreen';
 import ResetScreen from '@/screen/auth/resetScreen';
 import VerifyScreen from '@/screen/auth/verifyScreen';
+import OtpVerifyScreen from '@/screen/auth/otpVerifyScreen';
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
@@ -22,6 +23,7 @@ const AuthStack = () => {
       <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
       <Stack.Screen name="ResetScreen" component={ResetScreen} />
       <Stack.Screen name="VerifyScreen" component={VerifyScreen} />
+      <Stack.Screen name="OtpVerifyScreen" component={OtpVerifyScreen} />
     </Stack.Navigator>
   );
 };
