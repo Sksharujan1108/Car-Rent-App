@@ -6,9 +6,10 @@ import assets from '@/assets';
 import {IInputProps} from './props';
 
 const TextInputComponent = (props: IInputProps) => {
-  const {value, onChangeText, placeholder, secureTextEntry, isSecure, onSecurePress, keyboardType} = props;
+  const {containerStyle, leftAction, value, onChangeText, placeholder, secureTextEntry, isSecure, onSecurePress, keyboardType} = props;
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
+      {leftAction}
       <TextInput
         style={styles.input}
         placeholder={placeholder}
