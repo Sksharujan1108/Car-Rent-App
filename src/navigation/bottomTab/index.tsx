@@ -64,7 +64,7 @@ const BottomTab = () => {
               : scale(60),
           backgroundColor: colors.bgTab,
           position: 'absolute',
-          bottom: scale(28),
+          bottom: Platform.OS === 'android' ? scale(20) : scale(28),
           borderRadius: scale(30),
           marginHorizontal: scale(14),
         },
