@@ -59,22 +59,29 @@ const CarListCard = (props: ICarComponentProps) => {
         </View>
         {/*  */}
         {renderMarginBottom(6)}
-        <View style={styles.footerWrapper}>
-          <View style={[styles.flex]}>
-            <MaterialCommunityIcons
-              name="sofa-single-outline"
-              size={scale(16)}
-              color={colors.gray}
-            />
-            <Text style={[styles.text, styles.textBold]}>{carSeats}</Text>
+        {bottomActions ? (
+          bottomActions
+        ) : (
+          <View style={styles.footerWrapper}>
+            {/*  */}
+            <View style={[styles.flex]}>
+              <MaterialCommunityIcons
+                name="sofa-single-outline"
+                size={scale(16)}
+                color={colors.gray}
+              />
+              <Text style={[styles.text, styles.textBold]}>{carSeats}</Text>
+            </View>
+            {/*  */}
+            <View style={[styles.flex]}>
+              <Pressable style={styles.dollarContainer}>
+                <Fontisto name="dollar" size={scale(8)} color={colors.gray} />
+              </Pressable>
+              <Text style={[styles.text, styles.textBold]}>${price}/Day</Text>
+            </View>
+            {/*  */}
           </View>
-          <View style={[styles.flex]}>
-            <Pressable style={styles.dollarContainer}>
-              <Fontisto name="dollar" size={scale(8)} color={colors.gray} />
-            </Pressable>
-            <Text style={[styles.text, styles.textBold]}>${price}/Day</Text>
-          </View>
-        </View>
+        )}
       </View>
     </TouchableOpacity>
   );
