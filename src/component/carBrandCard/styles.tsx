@@ -10,7 +10,7 @@ export const styles = (
 ) =>
   StyleSheet.create({
     brandContainer: {
-      marginRight: isHorizontal ? scale(12) : scale(30),
+      marginRight: isHorizontal ? scale(18) : scale(30),
       alignItems: 'center',
       flexDirection: isHorizontal ? 'row' : 'column',
       columnGap: isHorizontal ? scale(4) : 0,
@@ -23,7 +23,7 @@ export const styles = (
       backgroundColor: colors.black,
       borderRadius: scale(100),
       height: isHorizontal ? scale(30) : scale(40),
-      width: isHorizontal ? scale(30) : scale(40),
+      width: isHorizontal ? scale(32) : scale(40),
       alignItems: 'center',
       justifyContent: 'center',
     },

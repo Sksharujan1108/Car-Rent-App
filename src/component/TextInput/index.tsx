@@ -6,7 +6,7 @@ import assets from '@/assets';
 import {IInputProps} from './props';
 
 const TextInputComponent = (props: IInputProps) => {
-  const {containerStyle, leftAction, value, onChangeText, placeholder, secureTextEntry, isSecure, onSecurePress, keyboardType} = props;
+  const {containerStyle, leftAction, value, onChangeText, placeholder, secureTextEntry, isSecure, onSecurePress, keyboardType, onPress} = props;
   return (
     <View style={[styles.container, containerStyle]}>
       {leftAction}
@@ -18,6 +18,7 @@ const TextInputComponent = (props: IInputProps) => {
         value={value}
         onChangeText={onChangeText}
         keyboardType={keyboardType}
+        onPress={onPress}
       />
       {isSecure && (
         <TouchableOpacity onPress={onSecurePress} activeOpacity={0.6}>

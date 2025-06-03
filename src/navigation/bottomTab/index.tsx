@@ -64,7 +64,7 @@ const BottomTab = () => {
               : scale(60),
           backgroundColor: colors.bgTab,
           position: 'absolute',
-          bottom: Platform.OS === 'android' ? scale(20) : scale(28),
+          bottom: Platform.OS === 'android' ? scale(10) : scale(28),
           borderRadius: scale(30),
           marginHorizontal: scale(14),
         },
@@ -78,12 +78,12 @@ const BottomTab = () => {
         component={SearchScreen}
       />
       <Tab.Screen
-        name="NotificationScreen"
-        component={NotificationScreen}
-      />
-      <Tab.Screen
         name="MessageScreen"
         component={MessageScreen}
+      />
+      <Tab.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
       />
       <Tab.Screen
         name="ProfieScreen"

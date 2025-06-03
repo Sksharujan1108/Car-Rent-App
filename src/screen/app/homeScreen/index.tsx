@@ -14,8 +14,10 @@ import CardBrandCard from '@/component/carBrandCard';
 import SectionHeader from '@/component/sectionHeader';
 import CarListCard from '@/component/carListCard';
 import assets from '@/assets';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { BottomTabParamList } from '@/navigation/navigation-model/bottomModels';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: BottomTabScreenProps<BottomTabParamList, 'HomeScreen'>) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   return (
     <SafeAreaView style={styles.container}>
@@ -26,12 +28,20 @@ const HomeScreen = () => {
       />
       <View style={styles.mainWrapper}>
         {/* Header */}
-        <Header />
+        <Header
+          title="Quent"
+        />
         {/*  */}
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
-          showsVerticalScrollIndicator={false}>
-          <SearchComponent />
+          showsVerticalScrollIndicator={false}
+        >
+          {/* Search */}
+          <SearchComponent
+            onPress={() => {
+              navigation.navigate('SearchScreen');
+            }}
+          />
           {/*  */}
           <View style={[styles.showCase]}>
             <Text style={styles.text}>Brands</Text>
