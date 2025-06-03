@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { colors } from '@/theme/colors';
 import { scale } from '@/theme/scale';
+import { FontSize } from '@/theme/font-size';
 
 interface SectionHeaderProps {
   title: string
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     marginBottom: scale(15),
   },
   titleText: {
-    fontSize: 16,
+    fontSize: FontSize?.FONT_15Px,
     fontWeight: '500',
     color: '#000',
   },

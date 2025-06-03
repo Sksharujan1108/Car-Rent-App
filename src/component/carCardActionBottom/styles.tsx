@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     borderRadius: 100,
   },
   price: {
-    fontSize: FontSize.FONT_11Px,
+    fontSize: FontSize.FONT_12Px,
     color: colors.black,
   },
   flex: {
@@ -41,9 +41,9 @@ export const styles = StyleSheet.create({
 
   buttonStyles: {
     paddingVertical: scale(6),
-    paddingHorizontal: scale(10),
+    paddingHorizontal: scale(8),
   },
   textStyles: {
-    fontSize: FontSize.FONT_14Px,
+    fontSize: FontSize.FONT_12Px,
   },
 });

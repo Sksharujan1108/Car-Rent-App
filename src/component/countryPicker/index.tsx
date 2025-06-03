@@ -1,8 +1,8 @@
 import {FlatList, Pressable, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import BootmSheet from '../bottomSheet';
 import {styles} from './styles';
 import {ICountryProps} from './props';
+import BottomSheet from '../bottomSheet';
 
 const CountryComponent = (props: ICountryProps) => {
   const {onPress} = props;
@@ -21,7 +21,7 @@ const CountryComponent = (props: ICountryProps) => {
           {selectedCountry?.ph}
         </Text>
         {/*  */}
-        <BootmSheet
+        <BottomSheet
           visible={isVisible}
           setVisible={setIsVisible}
         >
@@ -49,7 +49,7 @@ const CountryComponent = (props: ICountryProps) => {
               }}
             />
           </View>
-        </BootmSheet>
+        </BottomSheet>
       </Pressable>
     </View>
   );

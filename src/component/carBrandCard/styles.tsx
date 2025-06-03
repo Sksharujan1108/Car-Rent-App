@@ -16,7 +16,7 @@ export const styles = (
       columnGap: isHorizontal ? scale(4) : 0,
       backgroundColor: isSelected ? colors.bgTab : colors.backGround,
       paddingHorizontal: scale(3),
-      paddingVertical: scale(6),
+      paddingVertical: scale(5),
       borderRadius: scale(30),
     },
     brand: {
@@ -29,7 +29,7 @@ export const styles = (
     },
     brandText: {
       color: isSelected ? colors.white : colors.placeholderText,
-      fontSize: FontSize.FONT_12Px,
+      fontSize: isHorizontal ? FontSize.FONT_14Px : FontSize.FONT_12Px,
       fontFamily: isHorizontal ? typography.semiBold : typography.regular,
       marginRight: isHorizontal ? scale(6) : 0,
     },

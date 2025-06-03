@@ -18,12 +18,14 @@ import SectionHeader from '@/component/sectionHeader';
 import CarListCard from '@/component/carListCard';
 import assets from '@/assets';
 import CarCardActionBottom from '@/component/carCardActionBottom';
+import FilterPopUpCard from '@/component/DialogPopUp/filterPopUp';
 
 const SearchScreen = ({
   navigation,
 }: BottomTabScreenProps<BottomTabParamList, 'SearchScreen'>) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [searchValue, setSearchValue] = React.useState('');
+  const [showFilter, setShowFilter] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -44,6 +46,9 @@ const SearchScreen = ({
           <SearchComponent
             value={searchValue}
             onChangeText={text => setSearchValue(text)}
+            onFilterPress={() => {
+              setShowFilter(true);
+            }}
           />
           {/*  */}
           <View style={[styles.showCase]}>
@@ -75,7 +80,7 @@ const SearchScreen = ({
             }
             showsHorizontalScrollIndicator={false}
             ListHeaderComponent={
-              <SectionHeader title="Best Cars" onPress={() => {}} />
+              <SectionHeader title="Recommend For You" onPress={() => {}} />
             }
             renderItem={({ item, index}) => {
               return (
@@ -100,6 +105,12 @@ const SearchScreen = ({
             columnWrapperStyle={styles.flatListColumnWrapper}
           />
         </ScrollView>
+
+        {/*  */}
+        <FilterPopUpCard
+          visible={showFilter}
+          setVisible={setShowFilter}
+        />
       </View>
     </SafeAreaView>
   );
@@ -163,5 +174,23 @@ const carListData = [
     seats: '2 Seats',
     pricePerDay: 350,
     image: 'lamborghini',
+  },
+];
+
+const data = [
+  {
+    id: 1,
+    label: 'All Cars',
+    value: 'All Cars',
+  },
+  {
+    id: 2,
+    label: 'Regular Cars',
+    value: 'Regular Cars',
+  },
+  {
+    id: 3,
+    label: 'Luxury Cars',
+    value: 'Luxury Cars',
   },
 ];

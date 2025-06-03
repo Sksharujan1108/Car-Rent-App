@@ -27,7 +27,7 @@ const CarCardActionBottom = (props: CarCardActionBottomProps) => {
       </View>
       {/*  */}
       <PrimaryButton
-        label="Book"
+        label="Book now"
         containerStyle={styles.buttonStyles}
         textStyle={styles.textStyles}
         onPress={onPress}
