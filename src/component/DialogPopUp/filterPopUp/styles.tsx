@@ -30,6 +30,11 @@ export const styles = StyleSheet.create({
     flex: 0.08,
   },
 
+  scrollView: {
+    flexGrow: 1,
+    paddingBottom: scale(20),
+  },
+
   filterContainer: {
     flex: 1,
     paddingHorizontal: scale(18),
@@ -47,5 +52,42 @@ export const styles = StyleSheet.create({
   slider: {
     width: '100%',
     height: scale(40),
+  },
+
+  inputContainer: {
+    width: '48%',
+    // backgroundColor: 'red',
+  },
+  tabContainerStyle: {
+    borderWidth: 0,
+  },
+  tabStyle: {
+    borderWidth: 1,
+    borderColor: colors.btnBorder,
+  },
+  tabTextStyle: {
+    color: colors.placeholderText,
+    fontFamily: typography.regular,
+    fontSize: FontSize.FONT_13Px,
+  },
+  placeHolder: {
+    color: colors.placeholderText,
+  },
+  sitingCapTab: {
+    paddingHorizontal: scale(32),
+  },
+
+  clearAll: {
+    color: colors.black,
+    fontSize: FontSize.FONT_12Px,
+    fontFamily: typography.regular,
+  },
+  btnContainerStyle: {
+    paddingVertical: scale(10),
+      paddingHorizontal: scale(12),
+      backgroundColor: colors.black,
+  },
+  btnTextStyle: {
+    fontSize: FontSize.FONT_12Px,
   },
 });
